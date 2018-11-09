@@ -1,9 +1,71 @@
+$site-id: green;
+$nav: azure;
+$nav-hover: darkblue;
+$active: darkblue;
+$bg: lightblue;
+
 body {
-  background-color: blue;
+  background-color: $bg;
 }
-div {
+
+nav {
+  overflow: hidden;
+  background-color:$nav;
+  padding: 90px 10px; // will shrink on scroll
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  .site-id {
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.4s
+  }
+  a {
+    float: left;
+    color: $site-id;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  a:hover {
+    background-color: $nav-hover;
+    color: $site-id;
+  }
+  a.active {
+    background-color: $active;
+    color: white;
+  }
+  .menu {
+    float: right;
+  }
+}
+
+main {
   height: 2000px;
   width: 142px;
   background-color: salmon;
   margin: 10px auto;
+}
+
+// Media queries
+@media screen and (max-width: 580px) {
+
+  /* Javascript won't override padding on small screens */
+  nav {
+    padding: 20px 10px !important;
+    a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .menu {
+      float: right;
+    }
+  }
+
 }

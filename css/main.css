@@ -1,10 +1,52 @@
 body {
-  background-color: blue; }
+  background-color: lightblue; }
 
-div {
+nav {
+  overflow: hidden;
+  background-color: azure;
+  padding: 90px 10px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100; }
+  nav .site-id {
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.4s; }
+  nav a {
+    float: left;
+    color: green;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px; }
+  nav a:hover {
+    background-color: darkblue;
+    color: green; }
+  nav a.active {
+    background-color: darkblue;
+    color: white; }
+  nav .menu {
+    float: right; }
+
+main {
   height: 2000px;
   width: 142px;
   background-color: salmon;
   margin: 10px auto; }
+
+@media screen and (max-width: 580px) {
+  /* Javascript won't override padding on small screens */
+  nav {
+    padding: 20px 10px !important; }
+    nav a {
+      float: none;
+      display: block;
+      text-align: left; }
+    nav .menu {
+      float: right; } }
 
 /*# sourceMappingURL=main.css.map */
